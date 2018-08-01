@@ -1,0 +1,23 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
+
+@Injectable()
+export class PokemonProvider {
+
+  pokeApiUrl = 'https://pokeapi.co/api/v2/';
+
+  constructor(public http: HttpClient) {
+    console.log('Hello Pokemon Service');
+  }
+
+  getPokemon(id):Observable<any>{
+    return this.http.get(this.pokeApiUrl+'pokemon/'+id).map(res=> res);
+  }
+
+  getBerry(id):Observable<any>{
+  	return this.http.get(this.pokeApiUrl+'berry/'+id).map(res=> res);
+  }
+}
+

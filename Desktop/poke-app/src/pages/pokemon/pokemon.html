@@ -1,0 +1,30 @@
+<!--
+  Generated template for the PokemonPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="tsai">
+  	<button ion-button menuToggle>
+  		<ion-icon name="menu"></ion-icon>
+  	</button>
+    <ion-title>pokemon</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="fundo">
+	<button ion-button (click)="getPokemon()"> A wild pokemon appears !</button>
+
+  <ion-list>
+    <li *ngFor="let p of pokemons">
+      <ion-item>
+        <h2>{{p.name}}</h2>
+        <img src="{{p.sprites.front_default}}">
+      </ion-item>
+    </li>
+  </ion-list>
+</ion-content>
